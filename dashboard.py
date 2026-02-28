@@ -10,8 +10,8 @@ st.experimental_set_query_params(refresh=str(time.time()))
 
 # -------- FETCH DATA ----------
 try:
-    coins_response = requests.get("http://127.0.0.1:8000/coins")
-    stats_response = requests.get("http://127.0.0.1:8000/stats")
+    coins_response = requests.get("https://crypto-analytics-5h6o.onrender.com/coin")
+    stats_response = requests.get("https://crypto-analytics-5h6o.onrender.com/stats")
 
     coins_data = coins_response.json()
     stats_data = stats_response.json()
@@ -105,4 +105,5 @@ elif menu == "Rankings":
 
 # -------- FOOTER ----------
 st.sidebar.markdown("---")
+
 st.sidebar.info("Auto refresh every time ETL runs 🚀")
